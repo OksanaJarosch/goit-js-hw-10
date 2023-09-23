@@ -1,1 +1,0 @@
-{"mappings":"ACAA","sources":["index.a03f8e0f.css","src/css/styles.css"],"sourcesContent":[".breed-select {\n  min-width: 150px;\n  margin: 50px;\n}\n\n/*# sourceMappingURL=index.a03f8e0f.css.map */\n",".breed-select{\n    margin: 50px;\n    min-width: 150px;\n}"],"names":[],"version":3,"file":"index.a03f8e0f.css.map"}
