@@ -6,7 +6,7 @@ h2{
     margin: 50px;
     min-width: 150px;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .cat-info{
@@ -14,7 +14,9 @@ h2{
     flex-direction: column;
    gap: 30px;
    padding: 30px;
+   margin: auto;
    background-color:bisque;
+   border-radius: 5px;
    max-width: 300px;
    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -42,7 +44,14 @@ h2{
 
     .cat-info{
         flex-direction: row;
+          margin: 50px;
        max-width: 900px;
     }
 
+}
+
+@media screen and (max-width: 360px) {
+    .js-cat-photo{
+      width: 250px;
+    }
 }
