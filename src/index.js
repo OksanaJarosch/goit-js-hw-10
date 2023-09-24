@@ -1,8 +1,11 @@
 import { fetchBreeds } from "./helpers/cat-api";
 import { fetchCatByBreed } from "./helpers/cat-api";
+import { Report } from 'notiflix/build/notiflix-report-aio';
+// import SlimSelect from 'slim-select'
+
 
 // Globale constanten
-const selectPlaceholder = `<option class="js-selectOption" value="choose">Select the cat</option>`;
+const selectPlaceholder = `<option class="js-selectOption js-placeholder-select" value="choose">Select the cat</option>`;
 
 // Query selectors
 const select = document.querySelector(".breed-select");
@@ -20,7 +23,10 @@ function markupSelect(arr) {
 
 fetchBreeds()
 .then(data => {
-    select.insertAdjacentHTML("beforeend", markupSelect(data))
+    select.insertAdjacentHTML("beforeend", markupSelect(data));
+    // new SlimSelect({
+    //     select: '#selectElement'
+    //   })
 })
 .catch(err => console.log(err))
 
@@ -28,6 +34,7 @@ fetchBreeds()
 select.addEventListener("change", onChangeSelect);
 
 function onChangeSelect() {
+    catInfoCard.classList.add("cat-card");
     errorMessage.hidden = true;
     loaderMessage.hidden = false;
     select.hidden = true;
@@ -43,13 +50,19 @@ function onChangeSelect() {
 catInfoCard.innerHTML = createCatCard(img, name, description, temperament);
 loaderMessage.hidden = true;
 select.hidden = false;
+catInfoCard.classList.remove("cat-card");
 })
 .catch(err => {
-    errorMessage.hidden = false;
+    Report.failure(
+        'Oops! Something went wrong!',
+        'Please try again later',
+        'Okay',
+        );
+    // errorMessage.hidden = false;
     loaderMessage.hidden = true;
 select.hidden = false;
     console.log(err)
-    catInfoCard.innerHTML = "";
+    catInfoCard.classList.add("cat-card");
 })
 }
 

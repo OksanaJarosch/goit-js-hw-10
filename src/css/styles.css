@@ -1,12 +1,21 @@
+body{
+    background-color:rgb(228, 228, 228);
+}
+
 h2{
     margin: 0;
 }
 
 .breed-select{
-    margin: 50px;
+   margin-top: 50px;
+margin-bottom: 50px;
     min-width: 150px;
     padding: 5px;
     border-radius: 5px;
+    font-size: 20px;
+    background-color: rgb(242, 242, 242);
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .cat-info{
@@ -15,11 +24,15 @@ h2{
    gap: 30px;
    padding: 30px;
    margin: auto;
-   background-color:bisque;
+   background-color:rgb(250, 241, 230);
    border-radius: 5px;
    max-width: 300px;
    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.cat-card{
+    display: none;
 }
 
 .js-cat-description{
@@ -31,6 +44,7 @@ h2{
 }
 
 .loader{
+    margin-top: 50px;
   color: red;
   font-size: 24px;
 }
@@ -39,6 +53,40 @@ h2{
     color: red;
     font-size: 24px; 
 }
+
+.js-loader {
+    margin-right: 10px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #FFF;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .js-loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border-left: 4px solid #FF3D00;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+
 
 @media screen and (min-width: 768px) {
 
