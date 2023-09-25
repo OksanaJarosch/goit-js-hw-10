@@ -15,6 +15,10 @@ const errorMessage = document.querySelector(".error");
 
 select.insertAdjacentHTML("afterbegin", selectPlaceholder);
 
+
+loaderMessage.hidden = false;
+select.hidden = true;
+
 function markupSelect(arr) {
    return arr.map(({name, id}) => {
     return `<option class="js-selectOption" value="${id}">${name}</option>`
@@ -27,6 +31,8 @@ fetchBreeds()
     // new SlimSelect({
     //     select: '#selectElement'
     //   })
+    loaderMessage.hidden = true;
+    select.hidden = false;
 })
 .catch(err => console.log(err))
 
